@@ -1,38 +1,43 @@
 package mx.iteso.ut;
-
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.Before;
+import static org.mockito.Mockito.*;
+/*
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
  * Unit test for simple Quesadilla.
- */
+*/
 public class QuesadillaTest
-    extends TestCase
+  //  extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public QuesadillaTest(String testName )
-    {
-        super( testName );
+    public  Tortilla tortilla = mock(Tortilla.class);
+    public Queso queso = mock(Queso.class);
+    public Quesadilla quesadilla = new Quesadilla();
+    @Before
+    public void setUp(){
+    quesadilla.setQueso(queso);
+    quesadilla.setTortilla(tortilla);
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( QuesadillaTest.class );
+    @Test
+    public void quesadillaPerfecta(){
+    when(tortilla.isToasted()).thenReturn(true);
+    when(queso.isMelted()).thenReturn(true);
+        Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
     }
+    @Test
+    public void quesadillaBuena(){
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    }
+    @Test
+    public void quesadillaTerrible(){
+
+    }
+    @Test
+    public void noGas(){
+
     }
 }
