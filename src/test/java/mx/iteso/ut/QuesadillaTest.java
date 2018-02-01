@@ -3,36 +3,39 @@ package mx.iteso.ut;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.junit.Before;
+import static org.mockito.Mockito.*;
+
 
 /**
  * Unit test for simple Quesadilla.
  */
-public class QuesadillaTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public QuesadillaTest(String testName )
-    {
-        super( testName );
+
+
+public class QuesadillaTest {
+
+    @Before
+    public void setup(){
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( QuesadillaTest.class );
+    @org.junit.Test
+    public void quesadillaPerfecta(){
+
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @org.junit.Test
+    public void quesadillaBuena(){
+
+    }
+
+    @org.junit.Test
+    public void quesadillaTerrible(){
+
+    }
+
+    @org.junit.Test
+    public void noGas(){
+
     }
 }
