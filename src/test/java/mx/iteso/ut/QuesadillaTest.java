@@ -30,7 +30,9 @@ public class QuesadillaTest
     }
     @Test
     public void quesadillaBuena(){
-
+        when(tortilla.isToasted()).thenReturn(true);
+        when(queso.isMelted()).thenReturn(true);
+        Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
     }
     @Test
     public void quesadillaTerrible(){
