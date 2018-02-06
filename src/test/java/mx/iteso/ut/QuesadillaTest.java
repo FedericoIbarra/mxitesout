@@ -1,38 +1,70 @@
 package mx.iteso.ut;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.Before;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 /**
  * Unit test for simple Quesadilla.
  */
-public class QuesadillaTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public QuesadillaTest(String testName )
-    {
-        super( testName );
-    }
+public class QuesadillaTest {
+    Quesadilla quesadilla;
+    Queso mockedQueso;
+    Tortilla mockedTortilla;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( QuesadillaTest.class );
-    }
+@Before
+public void SetUp(){
+    //estas variables van a ser mockeadas, usando la clase Tortilla que es una interfaz
+    quesadilla = new Quesadilla();
+    mockedTortilla = mock(Tortilla.class);
+    mockedQueso = mock(Queso.class);
+    quesadilla.setQueso(mockedQueso);
+    quesadilla.setTortilla(mockedTortilla);
+    quesadilla.setHeatLevel(1);
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+}
+
+@Test
+public void quesadillaPerfecta(){
+
+    when(mockedTortilla.isToasted()).thenReturn(true);
+    when(mockedQueso.isMelted()).thenReturn(true);
+
+    Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
+
+}
+
+@Test
+public void quesadillaBuena(){
+
+
+    when(mockedTortilla.isToasted()).thenReturn(false);
+    when(mockedQueso.isMelted()).thenReturn(true);
+
+    Assert.assertEquals("Good quesadilla", quesadilla.prepareSingle());
+
+}
+
+@Test
+public void quesadillaTerrible(){
+
+
+    when(mockedTortilla.isToasted()).thenReturn(true);
+    when(mockedQueso.isMelted()).thenReturn(false);
+
+    Assert.assertEquals("Terrible quesadilla", quesadilla.prepareSingle());
+}
+
+@Test
+public void SinGas(){
+
+    when(mockedTortilla.isToasted()).thenReturn(false);
+    when(mockedQueso.isMelted()).thenReturn(false);
+
+    Assert.assertEquals("You ran out of gas", quesadilla.prepareSingle());
+}
+
 }
