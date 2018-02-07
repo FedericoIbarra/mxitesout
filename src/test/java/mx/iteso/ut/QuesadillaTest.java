@@ -3,8 +3,9 @@ package mx.iteso.ut;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.Before;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import org.mockito.Mockito;
+
+
 
 
 /**
@@ -19,8 +20,8 @@ public class QuesadillaTest {
 public void SetUp(){
     //estas variables van a ser mockeadas, usando la clase Tortilla que es una interfaz
     quesadilla = new Quesadilla();
-    mockedTortilla = mock(Tortilla.class);
-    mockedQueso = mock(Queso.class);
+    mockedTortilla = Mockito.mock(Tortilla.class);
+    mockedQueso = Mockito.mock(Queso.class);
     quesadilla.setQueso(mockedQueso);
     quesadilla.setTortilla(mockedTortilla);
     quesadilla.setHeatLevel(1);
@@ -30,8 +31,8 @@ public void SetUp(){
 @Test
 public void quesadillaPerfecta(){
 
-    when(mockedTortilla.isToasted()).thenReturn(true);
-    when(mockedQueso.isMelted()).thenReturn(true);
+    Mockito.when(mockedTortilla.isToasted()).thenReturn(true);
+    Mockito.when(mockedQueso.isMelted()).thenReturn(true);
 
     Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
 
@@ -41,8 +42,8 @@ public void quesadillaPerfecta(){
 public void quesadillaBuena(){
 
 
-    when(mockedTortilla.isToasted()).thenReturn(false);
-    when(mockedQueso.isMelted()).thenReturn(true);
+    Mockito.when(mockedTortilla.isToasted()).thenReturn(false);
+    Mockito.when(mockedQueso.isMelted()).thenReturn(true);
 
     Assert.assertEquals("Good quesadilla", quesadilla.prepareSingle());
 
@@ -52,8 +53,8 @@ public void quesadillaBuena(){
 public void quesadillaTerrible(){
 
 
-    when(mockedTortilla.isToasted()).thenReturn(true);
-    when(mockedQueso.isMelted()).thenReturn(false);
+    Mockito.when(mockedTortilla.isToasted()).thenReturn(true);
+    Mockito.when(mockedQueso.isMelted()).thenReturn(false);
 
     Assert.assertEquals("Terrible quesadilla", quesadilla.prepareSingle());
 }
@@ -61,8 +62,8 @@ public void quesadillaTerrible(){
 @Test
 public void SinGas(){
 
-    when(mockedTortilla.isToasted()).thenReturn(false);
-    when(mockedQueso.isMelted()).thenReturn(false);
+    Mockito.when(mockedTortilla.isToasted()).thenReturn(false);
+    Mockito.when(mockedQueso.isMelted()).thenReturn(false);
 
     Assert.assertEquals("You ran out of gas", quesadilla.prepareSingle());
 }
