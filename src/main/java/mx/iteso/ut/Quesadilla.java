@@ -9,6 +9,13 @@ public class Quesadilla
     private Queso queso;
     private Tortilla tortilla;
     private int heatLevel;
+    private QuesoAdobera quesoAdobera;
+    private QuesoChihuahua quesoChihuahua;
+    private TortillaMaiz tortillaMaiz;
+    private TortillaNopal tortillaNopal;
+
+    public Quesadilla() {
+    }
 
     public String prepareSingle(){
 
