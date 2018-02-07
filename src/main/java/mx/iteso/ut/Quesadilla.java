@@ -41,7 +41,6 @@ public class Quesadilla
         this.queso = queso;
     }
 
-
     public Tortilla getTortilla() {
         return tortilla;
     }
@@ -49,6 +48,7 @@ public class Quesadilla
     public void setTortilla(Tortilla tortilla) {
         this.tortilla = tortilla;
     }
+
 
     public int getHeatLevel() {
         return heatLevel;
