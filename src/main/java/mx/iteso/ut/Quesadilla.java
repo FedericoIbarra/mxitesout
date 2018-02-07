@@ -4,8 +4,7 @@ package mx.iteso.ut;
  * Hello world!
  *
  */
-public class Quesadilla
-{
+public class Quesadilla {
     private Queso queso;
     private Tortilla tortilla;
     private int heatLevel;
