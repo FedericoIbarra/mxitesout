@@ -1,3 +1,11 @@
+/*
+ * Nombre: Alfonso Cervantes Alonso
+ * Asignatura: Diseño de software
+ * Profesor: Rodrigo Villalobos
+ * Documento: "Quesadilla.java"
+ * Fecha de entrega: 07/02/2018
+ * */
+
 package mx.iteso.ut;
 
 /**
@@ -8,6 +16,10 @@ public class Quesadilla
 {
     private Queso queso;
     private Tortilla tortilla;
+    private QuesoManchego quesoManchego;
+    private TortillaIntegral tortillaIntegral;
+    private QuesoOaxaca quesoOaxaca;
+    private TortillaHarina tortillaHarina;
     private int heatLevel;
 
     public String prepareSingle(){

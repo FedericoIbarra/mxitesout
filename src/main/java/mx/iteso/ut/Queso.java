@@ -1,3 +1,11 @@
+/*
+ * Nombre: Alfonso Cervantes Alonso
+ * Asignatura: Diseño de software
+ * Profesor: Rodrigo Villalobos
+ * Documento: "Queso.java"
+ * Fecha de entrega: 07/02/2018
+ * */
+
 package mx.iteso.ut;
 
 public interface Queso {
