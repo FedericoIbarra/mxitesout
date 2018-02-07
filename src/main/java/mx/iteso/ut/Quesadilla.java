@@ -16,10 +16,17 @@ public class Quesadilla
      while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
          getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
          getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-         if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+         if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature()) {
              getTortilla().toast(true);
-         if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+         }else{
+             getTortilla().toast(false);
+         }
+         if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature()) {
              getQueso().melt(true);
+         }
+         else{
+             getQueso().melt(false);
+         }
      }
 
      if(getQueso().isMelted() && getTortilla().isToasted())
