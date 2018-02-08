@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 public class QuesoOaxaca implements Queso {
     int currentTemperature;
-    int meltingTemperature;
+    int meltingTemperature = 20;
     boolean melt;
 
     public int getCurrentTemperature() {
@@ -18,10 +18,10 @@ public class QuesoOaxaca implements Queso {
     }
 
     public boolean isMelted() {
-        return melt;
+        return (getCurrentTemperature() >= getMeltingTemperature());
     }
 
     public void melt(boolean melted) {
-        this.melt = melted;
+        this.melt = (getCurrentTemperature() >= meltingTemperature);
     }
 }

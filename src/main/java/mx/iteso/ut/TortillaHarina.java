@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 public class TortillaHarina implements Tortilla {
     int currentTemperature;
-    int toastTemperature;
+    int toastTemperature = 20;
     boolean toast;
 
     public int getCurrentTemperature() {
@@ -18,10 +18,10 @@ public class TortillaHarina implements Tortilla {
     }
 
     public boolean isToasted() {
-        return toast;
+        return (getCurrentTemperature() >= getToastTemperature());
     }
 
-    public void toast(boolean toasted) {
-        this.toast = toasted;
+    public void toast(boolean melted) {
+        this.toast = (getCurrentTemperature() >= toastTemperature);
     }
 }

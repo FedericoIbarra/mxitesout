@@ -12,24 +12,26 @@ public class QuesoAmarilloTest {
 
     @Before
     public void setUp(){
-        miQueso = mock(QuesoAmarillo.class);
+        miQueso.setCurrentTemperature(0);
     }
 
     @Test
     public void getCurrentTemperature(){
-        when(miQueso.getCurrentTemperature()).thenReturn(20);
-        Assert.assertEquals(20, miQueso.getCurrentTemperature());
+        Assert.assertEquals(0, miQueso.getCurrentTemperature());
     }
 
     @Test
     public void getMeltingTemperature(){
-        when(miQueso.getMeltingTemperature()).thenReturn(20);
         Assert.assertEquals(20, miQueso.getMeltingTemperature());
     }
 
     @Test
     public void melted(){
-        when(miQueso.isMelted()).thenReturn(true);
+        miQueso.setCurrentTemperature(22);
         Assert.assertEquals(true, miQueso.isMelted());
+
+        miQueso.setCurrentTemperature(18);
+        Assert.assertEquals(false, miQueso.isMelted());
+
     }
 }
