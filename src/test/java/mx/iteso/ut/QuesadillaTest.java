@@ -27,22 +27,22 @@ public class QuesadillaTest
         quesadilla = new Quesadilla();
         quesadilla.setQueso(queso);
         quesadilla.setTortilla(tortilla);
+        quesadilla.setHeatLevel(50);
     }
     @Test
     public void QuesadillaPerfecta(){
         //when(tortilla.isToasted()).testReturn(true);
-        quesadilla.setHeatLevel(75);
+        quesadilla.setTortillaTimeOffset(1);
         assertEquals("La quesadilla no fue perfecta", "Perfect quesadilla", quesadilla.prepareSingle());
     }
 
     @Test
     public void QuesadillaBuena(){
-        quesadilla.setHeatLevel(10);
+        quesadilla.setTortillaTimeOffset(2);
         assertEquals("La quesadilla no fue buena", "Good quesadilla", quesadilla.prepareSingle());
     }
     @Test
     public void QuesadillaTerrible(){
-        quesadilla.setHeatLevel(10);
         assertEquals("La quesadilla no fue buena", "Terrible quesadilla", quesadilla.prepareSingle());
     }
     @Test
