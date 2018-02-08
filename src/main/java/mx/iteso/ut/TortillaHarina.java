@@ -4,12 +4,16 @@ public class TortillaHarina implements Tortilla{
 
 	int temp;
 	boolean toasted;
-	int toastTemp = 17;
+	int toastTemp;
+	
+	public TortillaHarina(){
+		this.temp = 0;
+		this.toasted = false;
+		this.toastTemp = 17;
+	}
 	
 	public boolean isToasted() {
-		if(this.toasted)
-			return true;
-		return false;
+		return this.toasted;
 	}
 
 	public int getToastTemperature() {

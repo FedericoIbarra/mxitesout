@@ -4,12 +4,16 @@ public class TortillaMaiz implements Tortilla{
 
 	int temp;
 	boolean toasted;
-	int toastTemp = 20;
+	int toastTemp;
+	
+	public TortillaMaiz(){
+		this.temp = 0;
+		this.toasted = false;
+		this.toastTemp = 20;
+	}
 	
 	public boolean isToasted() {
-		if(this.toasted)
-			return true;
-		return false;
+		return this.toasted;
 	}
 
 	public int getToastTemperature() {

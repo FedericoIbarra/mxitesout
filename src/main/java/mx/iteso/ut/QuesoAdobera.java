@@ -4,12 +4,16 @@ public class QuesoAdobera implements Queso{
 	
 	int temp;
 	boolean melted;
-	int melTemp = 18;
+	int melTemp;
+	
+	public QuesoAdobera(){
+		this.temp = 0;
+		this.melted = false;
+		this.melTemp = 18;
+	}
 
 	public boolean isMelted() {
-		if(this.melted)
-			return true;
-		return false;
+		return this.melted;
 	}
 
 	public int getCurrentTemperature() {

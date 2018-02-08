@@ -4,12 +4,16 @@ public class QuesoCheddar implements Queso{
 
 	int temp;
 	boolean melted;
-	int melTemp = 21;
+	int melTemp;
 
+	public QuesoCheddar(){
+		this.temp = 0;
+		this.melted = false;
+		this.melTemp = 21;
+	}
+	
 	public boolean isMelted() {
-		if(this.melted)
-			return true;
-		return false;
+		return this.melted;
 	}
 
 	public int getCurrentTemperature() {
