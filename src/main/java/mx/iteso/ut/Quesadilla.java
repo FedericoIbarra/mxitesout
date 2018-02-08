@@ -12,11 +12,12 @@ public class Quesadilla
     private int minutes;
     private int tortillaTimeOffset;
     private int quesoTimeOffset;
+    private int gas;
 
     public String prepareSingle(){
 
      minutes = 0;
-     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
+     while(getHeatLevel() > 0 & (getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature())){
          if(getTortillaTimeOffset() <= minutes)
              getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
 
@@ -33,6 +34,7 @@ public class Quesadilla
              break;
 
          minutes ++;
+         setGas(getGas()-1);
      }
 
      if(getQueso().isMelted() && getTortilla().isToasted())
@@ -64,7 +66,7 @@ public class Quesadilla
     }
 
     public int getHeatLevel() {
-        return heatLevel;
+        return getGas() > 0 ? heatLevel : 0;
     }
 
     public void setHeatLevel(int heatLevel) {
@@ -83,5 +85,12 @@ public class Quesadilla
     }
     public int getQuesoTimeOffset(){
         return quesoTimeOffset;
+    }
+
+    public void setGas(int qtyGas){
+        gas = qtyGas > 0 ? qtyGas : 0;
+    }
+    public int getGas(){
+        return gas;
     }
 }

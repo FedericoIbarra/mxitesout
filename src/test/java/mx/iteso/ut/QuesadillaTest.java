@@ -28,6 +28,7 @@ public class QuesadillaTest
         quesadilla.setQueso(queso);
         quesadilla.setTortilla(tortilla);
         quesadilla.setHeatLevel(50);
+        quesadilla.setGas(5);
     }
     @Test
     public void QuesadillaPerfecta(){
@@ -43,10 +44,11 @@ public class QuesadillaTest
     }
     @Test
     public void QuesadillaTerrible(){
-        assertEquals("La quesadilla no fue buena", "Terrible quesadilla", quesadilla.prepareSingle());
+        assertEquals("La quesadilla no fue terrible", "Terrible quesadilla", quesadilla.prepareSingle());
     }
     @Test
     public void NoHayGas(){
-
+        quesadilla.setGas(0);
+        assertEquals("No deberia marcar algo que no sea no hay gas", "You ran out of gas", quesadilla.prepareSingle());
     }
 }
