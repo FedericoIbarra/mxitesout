@@ -42,7 +42,8 @@ public class QuesadillaTest
     }
     @Test
     public void QuesadillaTerrible(){
-
+        quesadilla.setHeatLevel(10);
+        assertEquals("La quesadilla no fue buena", "Terrible quesadilla", quesadilla.prepareSingle());
     }
     @Test
     public void NoHayGas(){
