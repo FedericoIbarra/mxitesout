@@ -1,14 +1,14 @@
 package mx.iteso.ut;
 
-public class Quesito implements Queso {
+public class QuesoPanela implements QuesoP {
 
     private int temperature;
     private int meltingTemperature;
     private boolean isMelted;
 
-    public Quesito(){
+    public QuesoPanela(){
         temperature = 0;
-        meltingTemperature = 20;
+        meltingTemperature = 30;
         isMelted = false;
     }
 

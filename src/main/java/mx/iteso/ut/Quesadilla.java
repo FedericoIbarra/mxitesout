@@ -9,6 +9,9 @@ public class Quesadilla {
     private Tortilla tortilla = new Tortillita();
     private int heatLevel;
 
+    private QuesoP quesoPanela = new QuesoPanela();
+    private TortillaH tortillaHarina = new TortillaHarina();
+
     public String prepareSingle() {
 
      while(getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature() ||
@@ -32,6 +35,32 @@ public class Quesadilla {
          return "Terrible quesadilla";
      else
          return "You ran out of gas";
+
+    }
+
+    public String prepareSingleConPanela() {
+
+        while(getQuesoPanela().getCurrentTemperature() < getQuesoPanela().getMeltingTemperature() ||
+                getTortillaHarina().getCurrentTemperature() < getTortillaHarina().getToastTemperature()) {
+
+            getTortillaHarina().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
+            getQuesoPanela().setCurrentTemperature(getQuesoPanela().getCurrentTemperature() + getHeatLevel());
+            if (getTortillaHarina().getCurrentTemperature() >= getTortillaHarina().getToastTemperature())
+                getTortillaHarina().toast(true);
+            if (getQuesoPanela().getCurrentTemperature() >= getQuesoPanela().getMeltingTemperature())
+                getQuesoPanela().melt(true);
+        }
+
+        if (getQuesoPanela().isMelted() && getTortillaHarina().isToasted())
+            return "Perfect quesadilla";
+
+        if (getQuesoPanela().isMelted() && !getTortillaHarina().isToasted())
+            return "Good quesadilla";
+
+        if (!getQuesoPanela().isMelted() && getTortillaHarina().isToasted())
+            return "Terrible quesadilla";
+        else
+            return "You ran out of gas";
 
     }
 
@@ -59,4 +88,26 @@ public class Quesadilla {
     public void setHeatLevel(int heatLevel) {
         this.heatLevel = heatLevel;
     }
+
+
+
+
+    public QuesoP getQuesoPanela() {
+        return quesoPanela;
+    }
+
+    public void setQuesoPanela(QuesoP quesoPanela) {
+        this.quesoPanela = quesoPanela;
+    }
+
+
+    public TortillaH getTortillaHarina() {
+        return tortillaHarina;
+    }
+
+    public void setTortillaHarina(TortillaH tortilla) {
+        this.tortillaHarina = tortilla;
+    }
+
+
 }
