@@ -22,7 +22,7 @@ public class TortillaHarinaTest {
     }
 
     @Test
-    public void  melt0(){
+    public void  toast0(){
        harina.toast(true);
        Assert.assertEquals(true, harina.isToasted());
     }

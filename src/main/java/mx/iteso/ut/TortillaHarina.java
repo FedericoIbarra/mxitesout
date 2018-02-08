@@ -8,7 +8,7 @@ public class TortillaHarina implements Tortilla{
     public TortillaHarina(){
         this.toast = false;
         this.currentTemp = 0;
-        this.toastTemp = 50;
+        this.toastTemp = 20;
     }
 
     public boolean isToasted(){
