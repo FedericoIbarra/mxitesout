@@ -1,9 +1,6 @@
 package mx.iteso.ut;
 
-/**
- * Hello world!
- *
- */
+
 public class Quesadilla
 {
     private Queso queso;
@@ -48,7 +45,6 @@ public class Quesadilla
     public void setTortilla(Tortilla tortilla) {
         this.tortilla = tortilla;
     }
-
 
     public int getHeatLevel() {
         return heatLevel;
