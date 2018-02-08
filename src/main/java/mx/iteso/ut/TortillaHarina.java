@@ -3,7 +3,7 @@ package mx.iteso.ut;
 public class TortillaHarina implements Tortilla {
     private boolean toasted;
     private int tTemperature = 25;
-    private int cTemperature;
+    private int cTemperature = 5;
 
     public boolean isToasted() {
         return toasted;

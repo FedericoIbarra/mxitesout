@@ -5,8 +5,8 @@ import com.sun.xml.internal.fastinfoset.algorithm.BooleanEncodingAlgorithm;
 
 public class QuesoOaxaca implements Queso {
     private boolean melted;
-    private int cTemperature;
-    private int mTemperature = 38;
+    private int cTemperature = 25;
+    private int mTemperature = 40;
 
     public boolean isMelted() {
         return melted;

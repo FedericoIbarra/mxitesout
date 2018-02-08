@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 public class QuesoManchego implements Queso{
     private boolean melted;
-    private int cTemperature;
+    private int cTemperature = 10;
     private int mTemperature = 45;
 
     public boolean isMelted() {
