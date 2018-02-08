@@ -1,9 +1,36 @@
 package mx.iteso.ut;
 
+/**
+ *
+ */
 public interface Queso {
-    public boolean isMelted();
-    public int getCurrentTemperature();
-    public int getMeltingTemperature();
-    public void setCurrentTemperature(int temp);
-    public void melt(boolean melted);
+    /**
+     *
+     * @return adfasdf
+     */
+    boolean isMelted();
+
+    /**
+     *
+     * @return asdfa
+     */
+    int getCurrentTemperature();
+
+    /**
+     *
+     * @return asdf
+     */
+    int getMeltingTemperature();
+
+    /**
+     *
+     * @param temp asdf
+     */
+    void setCurrentTemperature(int temp);
+
+    /**
+     *
+     * @param melted asfdadf
+     */
+    void melt(boolean melted);
 }
