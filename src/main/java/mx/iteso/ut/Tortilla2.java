@@ -3,7 +3,7 @@ package mx.iteso.ut;
 public class Tortilla2 implements Tortilla {
     protected boolean Toasted = false;
     protected int toastTemperature = 30; //temperatura de tostado
-    protected int currentTemperature = 0; // default temperatura es 0
+    protected int currentTemperature = 30; // default temperatura es 0
     public boolean isToasted() {
         return false;
     }

@@ -3,7 +3,7 @@ package mx.iteso.ut;
 public class Queso2 implements Queso{
     protected boolean Melted = false;
     protected int meltingTemperature = 35; //temperatura de tostado
-    protected int currentTemperature = 0; // default temperatura es 0
+    protected int currentTemperature = 35; // default temperatura es 0
     public boolean isMelted() {
         return Melted;
     }
