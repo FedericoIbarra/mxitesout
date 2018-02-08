@@ -80,6 +80,8 @@ public class QuesadillaTest {
         mockedQuesadillaPanela.prepareSingle();
         assertEquals("Perfect quesadilla", quesadillaPanela.prepareSingleConPanela());
         verify(mockedQuesadillaPanela).prepareSingleConPanela();
+
+        
     }
 
     @Test
