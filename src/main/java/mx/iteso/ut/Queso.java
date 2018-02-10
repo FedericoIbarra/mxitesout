@@ -1,9 +1,33 @@
 package mx.iteso.ut;
 
+    /**
+     * Interfaz con metodos de queso.
+     * @since 02-08-2018
+     * */
 public interface Queso {
-    public boolean isMelted();
-    public int getCurrentTemperature();
-    public int getMeltingTemperature();
-    public void setCurrentTemperature(int temp);
-    public void melt(boolean melted);
+    /**
+     *metodo para verificar si ya se derritio.
+     *@return isMelted
+     * */
+    boolean isMelted();
+    /**
+    *metodo para saber la temperatura actual.
+    * @return CurrentTemp
+    * */
+    int getCurrentTemp();
+    /**
+    * metodo saber la temperatura de derretido.
+    * @return MeltingTemp
+    * */
+    int getMeltingTemp();
+    /**
+    * @param temp
+    * metodo para saber temperatura actual.
+    * */
+    void setCurrentTemp(int temp);
+    /**
+     * @param melted
+     * metodo que para definir derretido.
+     */
+    void melt(boolean melted);
 }

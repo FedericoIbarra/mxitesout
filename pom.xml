@@ -33,6 +33,17 @@
       <artifactId>junit</artifactId>
       <version>RELEASE</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/pmd/pmd -->
+    <dependency>
+      <groupId>pmd</groupId>
+      <artifactId>pmd</artifactId>
+      <version>4.3</version>
+    </dependency>
   </dependencies>
 </project>

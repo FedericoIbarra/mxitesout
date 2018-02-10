@@ -1,26 +1,63 @@
+/**
+ * Clase Queso2 que implementa interfaz Queso.
+ * @author Francisco Camacho
+ * @since 02-08-2018
+ * @version 1.0
+ * */
 package mx.iteso.ut;
-
-public class Queso2 implements Queso{
-    protected boolean Melted = false;
-    protected int meltingTemperature = 35; //temperatura de tostado
-    protected int currentTemperature = 35; // default temperatura es 0
-    public boolean isMelted() {
-        return Melted;
+/**
+ * Info about this package doing something for package-info.java file.
+ */
+public class Queso2 implements Queso {
+    /**
+     * Info about this package doing something for package-info.java file.
+     */
+    private boolean melted = false;
+    /**
+     * Info about this package doing something for package-info.java file.
+     */
+    private static final Integer MELTING_TEMPERATURE = 35;
+    /**
+     * Info about this package doing something for package-info.java file.
+     */
+    private static final Integer DEFAULT_TEMPERATURE = new Integer(35);
+    /**
+     * Info about this package doing something for package-info.java file.
+     */
+    private int currentTemperature = DEFAULT_TEMPERATURE;
+    /**
+     *metodo para verificar si ya se derritio.
+     *@return isMelted
+     * */
+    public final boolean isMelted() {
+        return melted;
     }
-
-    public int getCurrentTemperature() {
+    /**
+     * metodo saber la temperatura de derretido.
+     * @return MeltingTemp
+     * */
+    public final int getCurrentTemp() {
         return currentTemperature;
     }
-
-    public int getMeltingTemperature() {
-        return meltingTemperature;
+    /**
+     * metodo saber la temperatura de derretido.
+     * @return MeltingTemp
+     * */
+    public final int getMeltingTemp() {
+        return MELTING_TEMPERATURE;
     }
-
-    public void setCurrentTemperature(int temp) {
+    /**
+     * @param temp
+     * metodo para saber temperatura actual.
+     * */
+    public final void setCurrentTemp(final int temp) {
         this.currentTemperature = temp;
     }
-
-    public void melt(boolean melted) {
-        this.Melted = melted;
+    /**
+     * @param melting
+     * metodo que para definir derretido.
+     */
+    public final void melt(final boolean melting) {
+        this.melted = melting;
     }
 }
