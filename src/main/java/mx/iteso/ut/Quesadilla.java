@@ -1,59 +1,98 @@
 package mx.iteso.ut;
 
 /**
- * Hello world!
- *
+ * Clase principal del Proyecto.
  */
-public class Quesadilla
-{
+public class Quesadilla {
+    /**Atributo tipo Queso del objeto Quesadilla.*/
     private Queso queso;
+    /**Atributo tipo Tortilla del objeto Quesadilla.*/
     private Tortilla tortilla;
+    /**Entero que indica la temperatura actual del objeto Quesadilla.*/
     private int heatLevel;
 
-    public String prepareSingle(){
+    /**Método que determina el tipo de quesadilla obtenida.
+     * Compara los atributos meltingTemperature y toastTemperature de
+     * Queso y Tortilla (respectivamente) contra la temperatura del
+     * objeto quesadilla.
+     * @return el resultado de las comparaciones.*/
+    public final String prepareSingle() {
 
-
-     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() && getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
-         getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
-         getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-         if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
+     while (getQueso().getCurrentTemperature()
+             < getQueso().getMeltingTemperature()
+             && getTortilla().getCurrentTemperature()
+             < getTortilla().getToastTemperature()) {
+         getTortilla().setCurrentTemperature(getTortilla()
+                 .getCurrentTemperature() + getHeatLevel());
+         getQueso().setCurrentTemperature(getQueso().getCurrentTemperature()
+                 + getHeatLevel());
+         if (getTortilla().getCurrentTemperature()
+                 >= getTortilla().getToastTemperature()) {
              getTortilla().toast(true);
-         if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
+         }
+         if (getQueso().getCurrentTemperature()
+                 >= getQueso().getMeltingTemperature()) {
              getQueso().melt(true);
+         }
      }
 
-     if(getQueso().isMelted() && getTortilla().isToasted())
+     if (getQueso().isMelted() && getTortilla().isToasted()) {
          return "Perfect quesadilla";
-     if(getQueso().isMelted() && !getTortilla().isToasted())
+     } else if (getQueso().isMelted() && !getTortilla().isToasted()) {
          return "Good quesadilla";
-     if(!getQueso().isMelted() && getTortilla().isToasted())
+     } else if (!getQueso().isMelted() && getTortilla().isToasted()) {
          return "Terrible quesadilla";
-     else
+     } else {
          return "You ran out of gas";
+     }
 
     }
 
-    public Queso getQueso() {
+    /**
+     * Metodo para obtner el elemento Queso del objeto Quesadilla.
+     * @return queso actual.
+     */
+    public final Queso getQueso() {
         return queso;
     }
 
-    public void setQueso(Queso queso) {
-        this.queso = queso;
+    /**
+     * Método que asigna un objeto Queso como atributo de Quesadilla.
+     * @param myQueso recibe un objeto queso.
+     */
+    public final void setQueso(final Queso myQueso) {
+        this.queso = myQueso;
     }
 
-    public Tortilla getTortilla() {
+    /**
+     * Metodo para obtner el elemento Tortilla del objeto Quesadilla.
+     * @return tortilla actual.
+     */
+    public final Tortilla getTortilla() {
         return tortilla;
     }
 
-    public void setTortilla(Tortilla tortilla) {
-        this.tortilla = tortilla;
+    /**
+     * Método que asigna un objeto Tortilla como atributo de Quesadilla.
+     * @param myTortilla recibe un objeto tortilla.
+     */
+    public final void setTortilla(final Tortilla myTortilla) {
+        this.tortilla = myTortilla;
     }
 
-    public int getHeatLevel() {
+    /**
+     * Metodo para obtner el atributo de temperatura del objeto Quesadilla.
+     * @return temperatura actual.
+     */
+    public final int getHeatLevel() {
         return heatLevel;
     }
 
-    public void setHeatLevel(int heatLevel) {
-        this.heatLevel = heatLevel;
+    /**
+     * Método que asigna un entero como atributo de Quesadilla.
+     * @param myHeatLevel recibe un entero.
+     */
+    public final void setHeatLevel(final int myHeatLevel) {
+        this.heatLevel = myHeatLevel;
     }
 }
