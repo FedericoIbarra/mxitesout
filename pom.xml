@@ -27,5 +27,17 @@
      <version>1.9.5</version>
      <scope>test</scope>
    </dependency>
+   <dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <version>3.0.0</version>
+    <type>maven-plugin</type>
+  </dependency>
+  <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-pmd-plugin</artifactId>
+      <version>3.9.0</version>
+      <type>maven-plugin</type>
+    </dependency>
  </dependencies>
 </project>
