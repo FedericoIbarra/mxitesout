@@ -8,7 +8,7 @@ int getCurrentTemperature();
 /**@return int*/
 int getMeltingTemperature();
 /** @param temp int*/
-void setCurrentTemperature(int temp);
+void setCurrentTemperature(final int temp);
 /** @param melted boolean*/
-void melt(boolean melted);
+void melt(final boolean melted);
 }

@@ -8,7 +8,7 @@ int getToastTemperature();
 /**@return int*/
 int getCurrentTemperature();
 /**@param temp int */
-void setCurrentTemperature(int temp);
+void setCurrentTemperature(final int temp);
 /**@param toasted boolean*/
-void toast(boolean toasted);
+void toast(final boolean toasted);
 }
