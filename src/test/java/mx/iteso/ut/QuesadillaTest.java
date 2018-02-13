@@ -40,9 +40,6 @@ public class QuesadillaTest{
         //compare if it is a perfect quesadilla
         Assert.assertEquals("Perfect quesadilla", quesadilla.prepareSingle());
 
-        //check if the function enters the cycle
-        verify(mTortilla, atLeastOnce()).toast(true);
-        verify(mQueso, atLeastOnce()).melt(true);
     }
 
     @Test
@@ -60,19 +57,14 @@ public class QuesadillaTest{
         //compare if it is a perfect quesadilla
         Assert.assertEquals("Good quesadilla", quesadilla.prepareSingle());
 
-        //check if the function enters to the cycle
-        verify(mQueso, atLeastOnce()).melt(true);
-        verify(mTortilla, atLeastOnce()).toast(false);
-
-
     }
 
     @Test
     public void terribleQuesadilla(){
-        when(mTortilla.getToastTemperature()).thenReturn(20);
+        when(mTortilla.getToastTemperature()).thenReturn(10);
         when(mTortilla.getCurrentTemperature()).thenReturn(2,6,10);
 
-        when(mQueso.getMeltingTemperature()).thenReturn(10);
+        when(mQueso.getMeltingTemperature()).thenReturn(20);
         when(mQueso.getCurrentTemperature()).thenReturn(2,6,10);
 
         //Conditions to be a terrible quesadilla
@@ -82,11 +74,6 @@ public class QuesadillaTest{
         //compare if it is a perfect quesadilla
         Assert.assertEquals("Terrible quesadilla", quesadilla.prepareSingle());
 
-        //check if the function enters to the cycle
-        verify(mTortilla, atLeastOnce()).toast(true);
-        verify(mQueso, never()).melt(true);
-        //verify(mQueso, atLeastOnce()).melt(false);
-        //verify(mTortilla, atLeastOnce()).toast(true);
     }
 
     @Test
@@ -104,9 +91,6 @@ public class QuesadillaTest{
         //compare if it is a perfect quesadilla
         Assert.assertEquals("You ran out of gas", quesadilla.prepareSingle());
 
-        //check if the function enters to the cycle
-        verify(mTortilla, never()).toast(true);
-        verify(mQueso, never()).melt(true);
     }
    
 }
