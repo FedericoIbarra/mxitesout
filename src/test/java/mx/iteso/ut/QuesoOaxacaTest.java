@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import static org.mockito.Mockito.*;
@@ -26,6 +26,6 @@ public class QuesoOaxacaTest {
 		int intended = rand.nextInt(100);
 		qm.setCurrentTemperature(intended);
 		
-		Assert.assertTrue(qm.getCurrentTemperature()==intended);
+		assertTrue(qm.getCurrentTemperature()==intended);
 	}
 }

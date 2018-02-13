@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import static org.mockito.Mockito.*;
@@ -25,6 +25,6 @@ static Random rand = new Random(System.currentTimeMillis());
 		int intended = rand.nextInt(100);
 		thi.setCurrentTemperature(intended);
 		
-		Assert.assertTrue(thi.getCurrentTemperature()==intended);
+		assertTrue(thi.getCurrentTemperature()==intended);
 	}
 }

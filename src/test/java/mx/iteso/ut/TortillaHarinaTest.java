@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import static org.mockito.Mockito.*;
@@ -26,6 +26,6 @@ public class TortillaHarinaTest {
 		int intended = rand.nextInt(100);
 		th.setCurrentTemperature(intended);
 		
-		Assert.assertTrue(th.getCurrentTemperature()==intended);
+		assertTrue(th.getCurrentTemperature()==intended);
 	}
 }

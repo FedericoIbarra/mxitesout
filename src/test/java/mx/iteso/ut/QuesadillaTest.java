@@ -2,7 +2,7 @@ package mx.iteso.ut;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import static org.mockito.Mockito.*;
@@ -31,49 +31,49 @@ public class QuesadillaTest
    @Test
    public void quesadillaPerfecta(){
       when(mockedTortilla.getToastTemperature()).thenReturn(30);
-      when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);
+      when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22, 35);
       when(mockedQueso.getMeltingTemperature()).thenReturn(30);
-      when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);
+      when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22, 32);
       
       when(mockedQueso.isMelted()).thenReturn(true);
       when(mockedTortilla.isToasted()).thenReturn(true);
       
-      Assert.assertTrue(quesadilla.prepareSingle().equals("Perfect quesadilla"));
+      assertTrue(quesadilla.prepareSingle().equals("Perfect quesadilla"));
    }
    @Test
    public void quesadillaBuena(){
 	   when(mockedTortilla.getToastTemperature()).thenReturn(30);
-	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22); //2,6,10,14,18,22
+	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,35); //2,6,10,14,18,22
 	   when(mockedQueso.getMeltingTemperature()).thenReturn(30);
-	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);//rand.nextInt(90)
+	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,32);//rand.nextInt(90)
 	   
 	   when(mockedQueso.isMelted()).thenReturn(true);
 	   when(mockedTortilla.isToasted()).thenReturn(false);
 	   
-	   Assert.assertTrue(quesadilla.prepareSingle().equals("Good quesadilla"));
+	   assertTrue(quesadilla.prepareSingle().equals("Good quesadilla"));
    }
    @Test
    public void quesadillaTerrible(){
 	   when(mockedTortilla.getToastTemperature()).thenReturn(30);
-	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22); //2,6,10,14,18,22
+	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,35); //2,6,10,14,18,22
 	   when(mockedQueso.getMeltingTemperature()).thenReturn(30);
-	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);//rand.nextInt(90)
+	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,32);//rand.nextInt(90)
 	   
 	   when(mockedQueso.isMelted()).thenReturn(false);
 	   when(mockedTortilla.isToasted()).thenReturn(true);
 	   
-	   Assert.assertTrue(quesadilla.prepareSingle().equals("Terrible quesadilla"));
+	   assertTrue(quesadilla.prepareSingle().equals("Terrible quesadilla"));
    }
    @Test
    public void noHayGas(){
 	   when(mockedTortilla.getToastTemperature()).thenReturn(30);
-	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22); //2,6,10,14,18,22
+	   when(mockedTortilla.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,35); //2,6,10,14,18,22
 	   when(mockedQueso.getMeltingTemperature()).thenReturn(30);
-	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22);//rand.nextInt(90)*/
+	   when(mockedQueso.getCurrentTemperature()).thenReturn(2,6,10,14,18,22,32);//rand.nextInt(90)*/
 	   
 	   when(mockedQueso.isMelted()).thenReturn(false);
 	   when(mockedTortilla.isToasted()).thenReturn(false);
 	   
-	   Assert.assertTrue(quesadilla.prepareSingle().equals("You ran out of gas"));
+	   assertTrue(quesadilla.prepareSingle().equals("You ran out of gas"));
    }
 }
