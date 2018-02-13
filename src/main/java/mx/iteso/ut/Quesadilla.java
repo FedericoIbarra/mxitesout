@@ -11,8 +11,6 @@ public class Quesadilla
     private int heatLevel;
 
     public String prepareSingle(){
-
-
      while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
          getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
          getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
@@ -40,7 +38,6 @@ public class Quesadilla
     public void setQueso(Queso queso) {
         this.queso = queso;
     }
-
 
     public Tortilla getTortilla() {
         return tortilla;
