@@ -4,93 +4,127 @@ package mx.iteso.ut;
  * Hello world!
  *
  */
-public class Quesadilla
-{
+public class Quesadilla {
+    /**
+     * Instance Variable Queso for making the quesadilla.
+     */
     private Queso queso;
-    private Tortilla tortilla;
+    /**
+     * Instance Variable Tortilla for making the quesadilla.
+     */
+    private Tortilla tortilla;  //Member variable Tortilla
+    /**
+     * Member Variable for tracking the heatLevel
+     * at wiche our ingredients are beign cook.
+     */
     private int heatLevel;
+    /**
+     * Member Variable for tracking how much time
+     * has pass since we turned on the grill.
+     */
     private int minutes;
+    /**
+     * Member Variable for tracking how much time
+     * we have to wait to put the tortilla.
+     */
     private int tortillaTimeOffset;
+    /**
+     * Member Variable for tracking how much time
+     * we have to wait to put the queso.
+     */
     private int quesoTimeOffset;
+    /**
+     * Member Variable for tracking how much
+     * we still have.
+     */
     private int gas;
 
-    public String prepareSingle(){
+    /**
+     * Instance method for cooking one quesadilla.
+     * @return string value
+     */
+    public final String prepareSingle() {
+        queso = getQueso();
+        tortilla = getTortilla();
+        minutes = 0;
+        while (getHeatLevel() > 0
+                & (queso.getCurrentTemp() < queso.getMeltingTemp()
+                || tortilla.getCurrentTemp() < tortilla.getToastTemp())) {
+            if (getTortillaTimeOffset() <= minutes) {
+                tortilla.setTemp(tortilla.getCurrentTemp() + getHeatLevel());
+            }
+            if (getQuesoTimeOffset() <= minutes) {
+                queso.setTemp(queso.getCurrentTemp() + getHeatLevel());
+            }
+            if (tortilla.getCurrentTemp() >= tortilla.getToastTemp()) {
+                tortilla.toast(true);
+            }
+            if (queso.getCurrentTemp() >= queso.getMeltingTemp()) {
+                queso.melt(true);
+            }
+            if (queso.isMelted() || tortilla.isToasted()) {
+                break;
+            }
+            minutes++;
+            setGas(getGas() - 1);
+        }
 
-     minutes = 0;
-     while(getHeatLevel() > 0 & (getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature())){
-         if(getTortillaTimeOffset() <= minutes)
-             getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
-
-         if(getQuesoTimeOffset() <= minutes)
-             getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-
-         if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
-             getTortilla().toast(true);
-
-         if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
-             getQueso().melt(true);
-
-         if(getQueso().isMelted() || getTortilla().isToasted())
-             break;
-
-         minutes ++;
-         setGas(getGas()-1);
-     }
-
-     if(getQueso().isMelted() && getTortilla().isToasted())
-         return "Perfect quesadilla";
-     if(getQueso().isMelted() && !getTortilla().isToasted())
-         return "Good quesadilla";
-     if(!getQueso().isMelted() && getTortilla().isToasted())
-         return "Terrible quesadilla";
-     else
-         return "You ran out of gas";
-
+        if (queso.isMelted() && tortilla.isToasted()) {
+            return "Perfect quesadilla";
+        }
+        if (queso.isMelted() && !tortilla.isToasted()) {
+            return "Good quesadilla";
+        }
+        if (!queso.isMelted() && tortilla.isToasted()) {
+            return "Terrible quesadilla";
+        } else {
+            return "You ran out of gas";
+        }
     }
 
-    public Queso getQueso() {
+    public final Queso getQueso() {
         return queso;
     }
 
-    public void setQueso(Queso queso) {
+    public final void setQueso(final Queso queso) {
         this.queso = queso;
     }
 
 
-    public Tortilla getTortilla() {
+    public final Tortilla getTortilla() {
         return tortilla;
     }
 
-    public void setTortilla(Tortilla tortilla) {
+    public final void setTortilla(final Tortilla tortilla) {
         this.tortilla = tortilla;
     }
 
-    public int getHeatLevel() {
+    public final int getHeatLevel() {
         return getGas() > 0 ? heatLevel : 0;
     }
 
-    public void setHeatLevel(int heatLevel) {
+    public final void setHeatLevel(int heatLevel) {
         this.heatLevel = heatLevel;
     }
 
-    public void setTortillaTimeOffset(int minuteOffset){
+    public final void setTortillaTimeOffset(int minuteOffset) {
         tortillaTimeOffset = minuteOffset;
     }
-    public int getTortillaTimeOffset(){
+    public final int getTortillaTimeOffset() {
         return tortillaTimeOffset;
     }
 
-    public void setQuesoTimeOffset(int minuteOffset){
+    public final void setQuesoTimeOffset(int minuteOffset) {
         quesoTimeOffset = minuteOffset;
     }
-    public int getQuesoTimeOffset(){
+    public final int getQuesoTimeOffset() {
         return quesoTimeOffset;
     }
 
-    public void setGas(int qtyGas){
+    public final void setGas(int qtyGas) {
         gas = qtyGas > 0 ? qtyGas : 0;
     }
-    public int getGas(){
+    public final int getGas() {
         return gas;
     }
 }
