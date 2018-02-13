@@ -1,8 +1,7 @@
 package mx.iteso.ut;
 
 /**
- * Hello world!
- *
+ * Quesadilla Class.
  */
 public class Quesadilla {
     /**
@@ -82,48 +81,105 @@ public class Quesadilla {
         }
     }
 
+    /**
+     * Getter for queso.
+     * @return Queso value
+     */
     public final Queso getQueso() {
         return queso;
     }
 
-    public final void setQueso(final Queso queso) {
-        this.queso = queso;
+    /**
+     * Setter for queso.
+     * @param q **Set member variable queso**
+     */
+    public final void setQueso(final Queso q) {
+        this.queso = q;
     }
 
-
+    /**
+     * Getter for tortilla.
+     * @return Tortilla value
+     */
     public final Tortilla getTortilla() {
         return tortilla;
     }
 
-    public final void setTortilla(final Tortilla tortilla) {
-        this.tortilla = tortilla;
+    /**
+     * Setter for tortilla.
+     * @param t **Set member variable tortilla**
+     */
+    public final void setTortilla(final Tortilla t) {
+        this.tortilla = t;
     }
 
+    /**
+     * Getter for heat level.
+     * @return int value
+     */
     public final int getHeatLevel() {
-        return getGas() > 0 ? heatLevel : 0;
+        if (getGas() > 0) {
+            return heatLevel;
+        }
+        return 0;
     }
 
-    public final void setHeatLevel(int heatLevel) {
-        this.heatLevel = heatLevel;
+    /**
+     * Setter for heat level.
+     * @param hl **Set member variable heat level**
+     */
+    public final void setHeatLevel(final int hl) {
+        this.heatLevel = hl;
     }
 
-    public final void setTortillaTimeOffset(int minuteOffset) {
+    /**
+     * Setter for tortilla offset.
+     * @param minuteOffset **Set member variable trtillaTimeOffset**
+     */
+    public final void setTortillaTimeOffset(final int minuteOffset) {
         tortillaTimeOffset = minuteOffset;
     }
+
+    /**
+     * Getter for tortilla offset.
+     * @return int value
+     */
     public final int getTortillaTimeOffset() {
         return tortillaTimeOffset;
     }
 
-    public final void setQuesoTimeOffset(int minuteOffset) {
+    /**
+     * Setter for queso offset.
+     * @param minuteOffset **Set member variable quesoTimeOffset**
+     */
+    public final void setQuesoTimeOffset(final int minuteOffset) {
         quesoTimeOffset = minuteOffset;
     }
+
+    /**
+     * Getter for queso offset.
+     * @return int value
+     */
     public final int getQuesoTimeOffset() {
         return quesoTimeOffset;
     }
 
-    public final void setGas(int qtyGas) {
-        gas = qtyGas > 0 ? qtyGas : 0;
+    /**
+     * Setter for gas level.
+     * @param qtyGas **Set member variable gas**
+     */
+    public final void setGas(final int qtyGas) {
+        if (qtyGas > 0) {
+            gas = qtyGas;
+        } else {
+            gas = 0;
+        }
     }
+
+    /**
+     * Getter for gas level.
+     * @return int value
+     */
     public final int getGas() {
         return gas;
     }
