@@ -1,33 +1,69 @@
 package mx.iteso.ut;
 
-public class QuesoAdobera implements Queso{
+/**
+ * Clase que implementa a a interfaz queso y establece los métodos al trabajar.
+ * con queso del tipo adobera
+ * @version 1. 12/02/18
+ * @author Mariana Salas
+ */
+public class QuesoAdobera implements Queso {
+    /**
+     * Determina si está derretido o no el queso.
+     */
     private boolean  melt;
-    private int currentTemperature , meltTemp;
+    /**
+     * La temperatura de cocción actual.
+     * La temperatura de derretimiento
+     */
+    private int currentTemperature, meltTemp;
 
-    public QuesoAdobera(){
+    /**
+     * Método para construir el queso.
+     * Inicializa las variables
+     */
+    public QuesoAdobera() {
         this.melt = false;
         this.currentTemperature = 0;
-        this.meltTemp = 40;
+        this.meltTemp = 14;
     }
 
-    public boolean isMelted(){
+    /**
+     * Método para conocer si el queso esta derretido.
+     * @return si esta derretido o no
+     */
+   public final boolean isMelted() {
         return melt;
     }
 
-    public int getCurrentTemperature(){
+    /**
+     * Método para obtener la temperatura actual de cocción.
+     * @return la temperatura actual
+     */
+    public final int getCurrentTemperature() {
         return this.currentTemperature;
     }
 
-    public void setCurrentTemperature(int newTemp){
+    /**
+     * Método para establecer la temperatura de cocción.
+     * @param newTemp nueva temperatura
+     */
+    public final void setCurrentTemperature(final int newTemp) {
         this.currentTemperature = newTemp;
     }
 
-
-    public int getMeltingTemperature(){
+    /**
+     * Método para obtener la temperatura de derretimiento.
+     * @return la temperatura guardada e la que el queso se derrite.
+     */
+    public final int getMeltingTemperature() {
         return this.meltTemp;
     }
 
-    public void melt(boolean m){
+    /**
+     * Método para establecer si está derretido el queso.
+     * @param m status de derretimiento
+     */
+    public final void melt(final boolean m) {
         this.melt = m;
     }
 
