@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.18">
+<file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/package-info.java">
+<error line="0" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="1" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck"/>
+</file>
 <file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/Tortilla.java">
-<error line="0" severity="error" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 </file>
 <file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/TortillaPerron.java">
 <error line="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
@@ -31,8 +34,6 @@
 <error line="19" column="23" severity="error" message="Parameter toasted should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
 <error line="19" column="39" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
 </file>
-<file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/Quesadilla.java">
-</file>
 <file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/QuesoPerron.java">
 <error line="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
 <error line="4" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
@@ -61,7 +62,5 @@
 <error line="22" column="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
 <error line="22" column="22" severity="error" message="Parameter melted should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
 <error line="22" column="37" severity="error" message="&apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
-</file>
-<file name="/home/menriquemcm/Documents/UnitTesting/mxitesout/src/main/java/mx/iteso/ut/Queso.java">
 </file>
 </checkstyle>
