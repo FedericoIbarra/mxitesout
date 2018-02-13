@@ -1,9 +1,36 @@
 package mx.iteso.ut;
 
+/**
+ *
+ */
 public interface Queso {
-    public boolean isMelted();
-    public int getCurrentTemperature();
-    public int getMeltingTemperature();
-    public void setCurrentTemperature(int temp);
-    public void melt(boolean melted);
+    /**
+     *
+     * @return a boolean value that indicates if the queso is melted
+     */
+     boolean isMelted();
+
+    /**
+     *
+     * @return the int value with the current temperature of the Quesito
+     */
+     int getCurrentTemperature();
+
+    /**
+     *
+     * @return the int value of the temperature in which the cheese is melted
+     */
+     int getMeltingTemperature();
+
+    /**
+     *
+     * @param temp to set the current temperature of the cheese
+     */
+     void setCurrentTemperature(int temp);
+
+    /**
+     *
+     * @param melted sets if the cheese is melted
+     */
+     void melt(boolean melted);
 }
