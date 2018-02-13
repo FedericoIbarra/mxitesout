@@ -1,7 +1,6 @@
 package mx.iteso.ut;
 
 
-import com.sun.xml.internal.fastinfoset.algorithm.BooleanEncodingAlgorithm;
 
 public class QuesoOaxaca implements Queso {
     private boolean melted;

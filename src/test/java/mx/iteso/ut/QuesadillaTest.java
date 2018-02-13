@@ -1,6 +1,5 @@
 package mx.iteso.ut;
 import org.junit.Assert;
-import org.junit.Assume;
 import org.junit.Test;
 import org.junit.Before;
 import static org.mockito.Mockito.*;
