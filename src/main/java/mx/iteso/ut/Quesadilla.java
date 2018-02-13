@@ -1,54 +1,72 @@
 package mx.iteso.ut;
-
+/**
+ *  Clase publica quesadilla.
+ *  @type
+ */
 public class Quesadilla {
-	private Queso queso;
-	private Tortilla tortilla;
-	private int heatLevel;
+/** VAR queso.*/
+private Queso queso;
+/** VAR tortilla.*/
+private Tortilla tortilla;
+/** VAR heatlevel.*/
+private int heatLevel;
+/**@return string*/
+public final String prepareSingle() {
+while (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature()
+&&
+getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature()) {
+getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature()
++ getHeatLevel());
+getQueso().setCurrentTemperature(getQueso().getCurrentTemperature()
++ getHeatLevel());
+if (getTortilla().getCurrentTemperature()
+>= getTortilla().getToastTemperature()) {
+getTortilla().toast(true);
+}
+if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature()) {
+getQueso().melt(true);
+}
+}
+if (getQueso().isMelted() && getTortilla().isToasted()) {
+return "Perfect quesadilla";
+}
+if (getQueso().isMelted() && !getTortilla().isToasted()) {
+return "Good quesadilla";
+}
+if (!getQueso().isMelted() && getTortilla().isToasted()) {
+return "Terrible quesadilla";
+} else {
+return "You ran out of gas";
+}
+}
 
-	public String prepareSingle() {
+/** @return Queso*/
+public final Queso getQueso() {
+return queso;
+}
 
-		while (getQueso().getCurrentTemperature() < getQueso().getMeltingTemperature()
-				&& getTortilla().getCurrentTemperature() < getTortilla().getToastTemperature()) {
-			getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
-			getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
-			if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
-				getTortilla().toast(true);
-			if (getQueso().getCurrentTemperature() >= getQueso().getMeltingTemperature())
-				getQueso().melt(true);
-		}
+/**@param queso1 */
+public final void setQueso(final Queso queso1) {
+this.queso = queso1;
+}
 
-		if (getQueso().isMelted() && getTortilla().isToasted())
-			return "Perfect quesadilla";
-		if (getQueso().isMelted() && !getTortilla().isToasted())
-			return "Good quesadilla";
-		if (!getQueso().isMelted() && getTortilla().isToasted())
-			return "Terrible quesadilla";
-		else
-			return "You ran out of gas";
+/** @return Tortilla*/
+public final Tortilla getTortilla() {
+return this.tortilla;
+}
 
-	}
+/** @param tortilla1 */
+public final void setTortilla(final Tortilla tortilla1) {
+this.tortilla = tortilla1;
+}
 
-	public Queso getQueso() {
-		return queso;
-	}
+/** @return int*/
+public final int getHeatLevel() {
+return this.heatLevel;
+}
 
-	public void setQueso(Queso queso) {
-		this.queso = queso;
-	}
-
-	public Tortilla getTortilla() {
-		return tortilla;
-	}
-
-	public void setTortilla(Tortilla tortilla) {
-		this.tortilla = tortilla;
-	}
-
-	public int getHeatLevel() {
-		return heatLevel;
-	}
-
-	public void setHeatLevel(int heatLevel) {
-		this.heatLevel = heatLevel;
-	}
+/** @param heatLevel1 */
+public final void setHeatLevel(final int heatLevel1) {
+this.heatLevel = heatLevel1;
+}
 }

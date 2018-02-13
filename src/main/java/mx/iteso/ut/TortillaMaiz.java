@@ -5,23 +5,23 @@ public class TortillaMaiz implements Tortilla {
 	int tTemperature = 30;
 	boolean toast=false;
 
-	public boolean isToasted() {
+	public final boolean isToasted() {
 			return toast;
 	}
 
-	public int getToastTemperature() {
+	public final int getToastTemperature() {
 		return tTemperature;
 	}
 
-	public int getCurrentTemperature() {
+	public final int getCurrentTemperature() {
 		return cTemperature;
 	}
 
-	public void setCurrentTemperature(int temp) {
+	public final void setCurrentTemperature(int temp) {
 		cTemperature = temp;
 	}
 
-	public void toast(boolean toasted) {
+	public final void toast(boolean toasted) {
 		toast = toasted;
 	}
 
