@@ -1,7 +1,7 @@
 package mx.iteso.ut;
 
 /**
- *
+ *Interface Queso.
  */
 public interface Queso {
     /**
