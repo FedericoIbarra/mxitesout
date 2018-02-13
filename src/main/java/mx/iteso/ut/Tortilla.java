@@ -1,10 +1,41 @@
 package mx.iteso.ut;
 
+/**
+ * Interfaz de la tortilla.
+ */
+
 public interface Tortilla {
-    public boolean isToasted();
-    public int getToastTemperature();
-    public int getCurrentTemperature();
-    public void setCurrentTemperature(int temp);
-    public void toast(boolean toasted);
+    /**
+     *
+     * @return si la tortilla esta tostada
+     */
+    boolean isToasted();
+
+    /**
+     *
+     * @return la temp para tostar
+     * la tortilla
+     */
+    int getToastTemperature();
+
+    /**
+     *
+     * @return la temp actual
+     */
+    int getCurrentTemperature();
+
+    /**
+     *
+     * @param temp establecer la temp
+     *             actual
+     */
+    void setCurrentTemperature(int temp);
+
+    /**
+     *
+     * @param toasted cambiar estatus
+     *                de la tortilla
+     */
+    void toast(boolean toasted);
 
 }
