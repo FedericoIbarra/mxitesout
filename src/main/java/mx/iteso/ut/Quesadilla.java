@@ -13,7 +13,7 @@ public class Quesadilla
     public String prepareSingle(){
 
 
-     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() || getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
+     while(getQueso().getCurrentTemperature()< getQueso().getMeltingTemperature() && getTortilla().getCurrentTemperature()< getTortilla().getToastTemperature()){
          getTortilla().setCurrentTemperature(getTortilla().getCurrentTemperature() + getHeatLevel());
          getQueso().setCurrentTemperature(getQueso().getCurrentTemperature() + getHeatLevel());
          if (getTortilla().getCurrentTemperature() >= getTortilla().getToastTemperature())
@@ -31,6 +31,17 @@ public class Quesadilla
      else
          return "You ran out of gas";
 
+    }
+
+    public String prepareDouble(){
+        // tortilla 1 tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso derretido
+        // tortilla 1 no tostada, tortilla 2 tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso no derretido
+        // tortilla 1 no tostada, tortilla 2 no tostada, queso derretido
+        // tortilla 1 tostada, tortilla 2 tostada, queso no derretido
+
+        return "";
     }
 
     public Queso getQueso() {
